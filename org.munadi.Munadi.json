@@ -1,0 +1,33 @@
+{
+    "app-id": "org.munadi.Munadi",
+    "runtime": "org.kde.Platform",
+    "runtime-version": "6.11",
+    "sdk": "org.kde.Sdk",
+    "command": "munadi",
+    "finish-args": [
+        "--device=dri",
+        "--share=ipc",
+        "--share=network",
+        "--socket=wayland",
+        "--socket=fallback-x11",
+        "--socket=pulseaudio",
+        "--socket=inherit-wayland-socket",
+        "--talk-name=org.freedesktop.Notifications",
+        "--talk-name=org.kde.StatusNotifierWatcher"
+    ],
+
+    "modules": [
+        {
+            "name": "munadi",
+            "buildsystem": "cmake-ninja",
+            "config-opts": ["-DCMAKE_BUILD_TYPE=Release"],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://gitlab.com/munadi/munadi/-/archive/26.11/munadi-26.11.tar.gz",
+                    "sha256": "e8d2915bb5b3b59111971409408c9ccc91a013329f904b2f8e1f9cf2a76c529d"
+                }
+            ]
+        }
+    ]
+}
